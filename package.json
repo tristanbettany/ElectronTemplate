@@ -1,0 +1,53 @@
+{
+    "name": "electron-template",
+    "description": "Electron Template",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron-forge start",
+      "package": "electron-forge package",
+      "make": "electron-forge make",
+      "build": "rm -rf ./public/css/site.css.map && npm run pcss -- --env production --no-map",
+      "pcss": "postcss ./renderer/pcss/main.pcss --output ./renderer/main.min.css"
+    },
+    "author": "Tristan Bettany",
+    "license": "MIT",
+    "dependencies": {
+      "electron-squirrel-startup": "^1.0.0",
+      "electron-store": "^8.0.1"
+    },
+    "devDependencies": {
+      "@electron-forge/cli": "^7.0.*",
+      "@electron-forge/maker-squirrel": "^7.0.*",
+      "electron": "^27.1.0",
+      "trim-newlines": "^5.0.*",
+      "@tailwindcss/forms": "^0.5.*",
+      "tailwindcss": "^3.3.*",
+      "cssnano": "^6.0.*",
+      "postcss": "^8.4.*",
+      "postcss-cli": "^10.1.*",
+      "postcss-custom-properties": "^13.3.*",
+      "postcss-import": "^15.1.*",
+      "postcss-nested": "^6.0.*",
+      "postcss-url": "^10.1.*",
+      "autoprefixer": "^10.4.*"
+    },
+    "config": {
+      "forge": {
+        "packagerConfig": {
+          "name": "Electron Template",
+          "icon": "./icon"
+        },
+        "makers": [
+          {
+            "name": "@electron-forge/maker-squirrel",
+            "config": {
+              "name": "mts",
+              "setupIcon": "./icon.ico",
+              "iconUrl": "https://icons.iconarchive.com/icons/musett/cds/128/Titanium-icon.png"
+            }
+          }
+        ]
+      }
+    }
+  }
